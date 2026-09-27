@@ -20,7 +20,7 @@ const chakra = Chakra_Petch({
 
 // Set NEXT_PUBLIC_SITE_URL to your deployed URL so link previews resolve the
 // social image correctly. Falls back to a sensible default otherwise.
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dwij-avengers-doomsday.antideploy.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://doomsday.antideploy.com";
 const description =
   "An Awwwards-style, fully scroll-driven cinematic web experience — the multiverse is breaking, only legends remain. Built with Next.js, React Three Fiber and GSAP. A Marvel-inspired fan concept.";
 

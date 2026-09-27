@@ -4,7 +4,7 @@ A non-commercial front-end study of scroll-directed storytelling, layered video 
 
 This is an independent fan-made study. It is not affiliated with, sponsored by, or endorsed by Marvel, Disney, or any film studio. Character names, trademarks, footage and related properties belong to their respective owners.
 
-**[Open the live web experience](https://dwij-avengers-doomsday.antideploy.com)**
+**[Open the live web experience](https://doomsday.antideploy.com)**
 
 ## Technical approach
 
