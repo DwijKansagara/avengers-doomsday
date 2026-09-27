@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="docs/doomsday-banner.svg" alt="Cinematic interface study built with Next.js, Three.js and GSAP" width="100%" />
+</div>
+
 # Cinematic interface study
 
 A non-commercial front-end study of scroll-directed storytelling, layered video and real-time WebGL atmosphere. The project combines a fixed visual stage with a long scroll track so each section behaves like a controllable sequence rather than a set of separate pages.
