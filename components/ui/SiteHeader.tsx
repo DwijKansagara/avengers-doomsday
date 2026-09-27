@@ -22,9 +22,13 @@ const smoothstep = (a: number, b: number, x: number) => {
  */
 export default function SiteHeader() {
   const ref = useRef<HTMLElement>(null);
+  const progressRef = useRef<HTMLSpanElement>(null);
 
   useRaf(() => {
     const el = ref.current;
+    if (progressRef.current) {
+      progressRef.current.style.transform = `scaleY(${clamp01(signals.scroll)})`;
+    }
     if (!el) return;
     const h = signals.header * (1 - smoothstep(0.02, 0.14, signals.reel));
     el.style.opacity = h.toFixed(3);
@@ -34,23 +38,28 @@ export default function SiteHeader() {
   });
 
   return (
-    <header ref={ref} className={styles.header} style={{ opacity: 0, visibility: "hidden" }}>
-      <div className={styles.brand}>
-        <span className={styles.mark} aria-hidden />
-        <span className={styles.brandText}>
-          MARVEL<b>STUDIOS</b>
-        </span>
-      </div>
-      <nav className={styles.nav}>
-        {NAV.map((n) => (
-          <a key={n} href="#" className={styles.navLink} onClick={(e) => e.preventDefault()}>
-            {n}
-          </a>
-        ))}
-      </nav>
-      <button className={styles.cta} type="button">
-        Get Tickets
-      </button>
-    </header>
+    <>
+      <span className={styles.pageProgressTrack} aria-hidden="true">
+        <span ref={progressRef} />
+      </span>
+      <header ref={ref} className={styles.header} style={{ opacity: 0, visibility: "hidden" }}>
+        <div className={styles.brand}>
+          <span className={styles.mark} aria-hidden />
+          <span className={styles.brandText}>
+            MARVEL<b>STUDIOS</b>
+          </span>
+        </div>
+        <nav className={styles.nav}>
+          {NAV.map((n) => (
+            <a key={n} href="#" className={styles.navLink} onClick={(e) => e.preventDefault()}>
+              {n}
+            </a>
+          ))}
+        </nav>
+        <button className={styles.cta} type="button">
+          Get Tickets
+        </button>
+      </header>
+    </>
   );
 }
