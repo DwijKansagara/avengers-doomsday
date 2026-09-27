@@ -12,7 +12,7 @@ import uuid
 
 ROOT = Path(__file__).resolve().parents[1]
 API = "https://antideploy.com"
-SKIP_DIRS = {".git", ".next", "node_modules", "out", "dist"}
+SKIP_DIRS = {".git", ".next", "node_modules", "out", "dist", "__pycache__"}
 MAX_FILE = 5 * 1024 * 1024
 MAX_ARCHIVE = 28 * 1024 * 1024
 
