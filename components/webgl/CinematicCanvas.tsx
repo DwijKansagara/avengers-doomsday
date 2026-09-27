@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { AdaptiveDpr } from "@react-three/drei";
 import SceneDriver from "./SceneDriver";
@@ -18,6 +19,13 @@ import Showcase from "./showcase/Showcase";
  * transparent areas let the video show straight through.
  */
 export default function CinematicCanvas() {
+  const [lightweight] = useState(() =>
+    typeof window !== "undefined" &&
+    (window.matchMedia("(pointer: coarse)").matches ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      window.innerWidth < 800),
+  );
+
   return (
     <Canvas
       className="canvas-layer"
@@ -29,7 +37,8 @@ export default function CinematicCanvas() {
         premultipliedAlpha: true,
         powerPreference: "high-performance",
       }}
-      dpr={[1, 1.5]}
+      dpr={lightweight ? [0.75, 1] : [1, 1.35]}
+      performance={{ min: 0.55 }}
       camera={{ position: [0, 0, 6], fov: 45, near: 0.1, far: 120 }}
       onCreated={({ gl, scene }) => {
         gl.setClearColor(0x000000, 0); // fully transparent so the video shows
@@ -42,7 +51,7 @@ export default function CinematicCanvas() {
       {/* deep void dust */}
       <ParticleField
         mode="dust"
-        count={7000}
+        count={lightweight ? 3200 : 6200}
         colorA="#00ff9c"
         colorB="#9dffd6"
         size={4.6}
@@ -56,7 +65,7 @@ export default function CinematicCanvas() {
       {/* embers drifting in front — atmosphere over the footage */}
       <ParticleField
         mode="ember"
-        count={1600}
+        count={lightweight ? 650 : 1300}
         colorA="#12b877"
         colorB="#d7ffef"
         size={6}

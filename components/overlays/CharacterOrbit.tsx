@@ -158,7 +158,7 @@ export default function CharacterOrbit() {
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             disablePictureInPicture
           />
           <div className={styles.grad} />

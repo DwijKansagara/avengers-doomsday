@@ -64,7 +64,7 @@ export default function VideoLayer() {
         className="cover-video"
         src={ASSETS.marvelVideo}
         poster={ASSETS.marvelPoster}
-        preload="auto"
+        preload="metadata"
         muted
         playsInline
         style={{ opacity: 0 }}
@@ -74,7 +74,7 @@ export default function VideoLayer() {
         className="cover-video"
         src={ASSETS.heroVideo}
         poster={ASSETS.heroPoster}
-        preload="auto"
+        preload="metadata"
         muted
         playsInline
         style={{ opacity: 0 }}
@@ -84,7 +84,7 @@ export default function VideoLayer() {
         className="cover-video"
         src={ASSETS.finaleVideo}
         poster={ASSETS.finalePoster}
-        preload="auto"
+        preload="metadata"
         muted
         playsInline
         style={{ opacity: 0 }}

@@ -50,7 +50,9 @@ export function scrubEl(el: HTMLVideoElement | null, t: number) {
   if (!el || el.readyState < 1) return;
   const dur = el.duration || 1;
   const clamped = Math.max(0, Math.min(dur - 0.03, t));
-  if (Math.abs(el.currentTime - clamped) > 0.008) {
+  // The source clips are 30–60 fps. Seeking below a frame-sized delta only
+  // churns the decoder and is a common cause of stutter on integrated GPUs.
+  if (Math.abs(el.currentTime - clamped) > 1 / 30) {
     el.currentTime = clamped;
   }
 }

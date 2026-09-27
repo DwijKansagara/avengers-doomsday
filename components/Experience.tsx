@@ -227,44 +227,46 @@ export default function Experience() {
 
   return (
     <>
-      <div className="stage">
-        {/* real fullscreen <video> trailers (z-index 1) */}
-        <VideoLayer />
-        {/* Section 3 — six stacked story panels (z-index 2) */}
-        <StoryStack />
-        {/* Section 4 — horizontal cinematic timeline (z-index 2) */}
-        <HorizontalReel />
-        {/* Section 5 — the battle is a scroll-scrubbed <video> in VideoLayer (z1) */}
-        {/* Section 6 — the MCU timeline artwork pans vertically (z-index 2) */}
-        <TimelineImage />
-        {/* Section 7 — the AVENGERS DOOMSDAY title reveal, autoplay/loop (z-index 2) */}
-        <TitleReveal />
-        {/* Section 2 — character video cards; z-auto wrapper so each card's
-            z-index straddles the atmosphere canvas (front over / behind the model) */}
-        <CharacterOrbit />
-        {/* transparent green atmosphere on top (z-index 3) */}
-        {mounted && <CinematicCanvas />}
-        <FlashOverlay />
-        <CinematicText />
-      </div>
-
       <SiteHeader />
-      <HeroOverlay />
-      <SiteFooter />
-      <ScrollCue />
+      <main>
+        <div className="stage">
+          {/* real fullscreen <video> trailers (z-index 1) */}
+          <VideoLayer />
+          {/* Section 3 — six stacked story panels (z-index 2) */}
+          <StoryStack />
+          {/* Section 4 — horizontal cinematic timeline (z-index 2) */}
+          <HorizontalReel />
+          {/* Section 5 — the battle is a scroll-scrubbed <video> in VideoLayer (z1) */}
+          {/* Section 6 — the MCU timeline artwork pans vertically (z-index 2) */}
+          <TimelineImage />
+          {/* Section 7 — the AVENGERS DOOMSDAY title reveal, autoplay/loop (z-index 2) */}
+          <TitleReveal />
+          {/* Section 2 — character video cards; z-auto wrapper so each card's
+              z-index straddles the atmosphere canvas (front over / behind the model) */}
+          <CharacterOrbit />
+          {/* transparent green atmosphere on top (z-index 3) */}
+          {mounted && <CinematicCanvas />}
+          <FlashOverlay />
+          <CinematicText />
+        </div>
 
-      {/* invisible scroll track — the distance the scrub travels over */}
-      <div className="scroll-track" ref={trackRef} aria-hidden>
-        <section style={{ height: `${marvelVh}vh` }} aria-label="Marvel Intro" />
-        <section style={{ height: `${heroVh}vh` }} aria-label="Hero" />
-        <section style={{ height: `${showcaseVh}vh` }} aria-label="Characters" />
-        <section style={{ height: `${storyVh}vh` }} aria-label="Story" />
-        <section style={{ height: `${reelVh}vh` }} aria-label="Timeline" />
-        <section style={{ height: `${finaleVh}vh` }} aria-label="Finale" />
-        <section style={{ height: `${mcuVh}vh` }} aria-label="Saga" />
-        <section style={{ height: `${titleVh}vh` }} aria-label="Title" />
-        <section style={{ height: `${footerVh}vh` }} aria-label="Footer" />
-      </div>
+        <HeroOverlay />
+        <ScrollCue />
+
+        {/* invisible scroll track — the distance the scrub travels over */}
+        <div className="scroll-track" ref={trackRef} aria-hidden>
+          <section style={{ height: `${marvelVh}vh` }} aria-label="Marvel Intro" />
+          <section style={{ height: `${heroVh}vh` }} aria-label="Hero" />
+          <section style={{ height: `${showcaseVh}vh` }} aria-label="Characters" />
+          <section style={{ height: `${storyVh}vh` }} aria-label="Story" />
+          <section style={{ height: `${reelVh}vh` }} aria-label="Timeline" />
+          <section style={{ height: `${finaleVh}vh` }} aria-label="Finale" />
+          <section style={{ height: `${mcuVh}vh` }} aria-label="Saga" />
+          <section style={{ height: `${titleVh}vh` }} aria-label="Title" />
+          <section style={{ height: `${footerVh}vh` }} aria-label="Footer" />
+        </div>
+      </main>
+      <SiteFooter />
     </>
   );
 }

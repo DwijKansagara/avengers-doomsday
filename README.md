@@ -4,6 +4,8 @@ A non-commercial front-end study of scroll-directed storytelling, layered video 
 
 This is an independent fan-made study. It is not affiliated with, sponsored by, or endorsed by Marvel, Disney, or any film studio. Character names, trademarks, footage and related properties belong to their respective owners.
 
+**[Open the live web experience](https://dwij-avengers-doomsday.antideploy.com)**
+
 ## Technical approach
 
 - Next.js 16, React 19 and TypeScript
@@ -63,3 +65,5 @@ npm run build
 ```
 
 The dependency lockfile is maintained with zero known npm audit findings at the time of the latest repository update.
+
+Maintainers signed in to Antideploy can publish a verified source bundle with `python scripts/deploy_antideploy.py`.
