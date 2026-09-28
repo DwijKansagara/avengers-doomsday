@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { createElement, useRef } from "react";
 import { signals } from "@/lib/signals";
 import { useRaf } from "@/lib/useRaf";
 import styles from "./footer.module.css";
@@ -17,7 +17,12 @@ const smoothstep = (a: number, b: number, x: number) => {
 };
 
 const NAV = ["Overview", "Characters", "Story", "Timeline"];
-const SOCIAL = ["Instagram", "X", "YouTube"];
+const LEGAL = [
+  ["Privacy", "/privacy.html"],
+  ["Terms", "/terms.html"],
+  ["Cookies", "/cookies.html"],
+  ["Refunds", "/refunds.html"],
+] as const;
 
 export default function SiteFooter() {
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -44,6 +49,7 @@ export default function SiteFooter() {
     <div className={styles.wrap} ref={wrapRef} style={{ visibility: "hidden" }}>
       <footer className={styles.footer} ref={footRef} style={{ opacity: 0 }}>
         <span className={styles.glow} />
+        {createElement("dwij-engagement", { site: "doomsday", compact: "" })}
         <div className={styles.inner}>
           <div className={styles.brand}>
             <span className={styles.mark}>
@@ -64,11 +70,11 @@ export default function SiteFooter() {
           </nav>
 
           <div>
-            <div className={styles.colHead}>Follow</div>
+            <div className={styles.colHead}>Legal</div>
             <div className={styles.social}>
-              {SOCIAL.map((l) => (
-                <a key={l} href="#" onClick={noop}>
-                  {l}
+              {LEGAL.map(([label, href]) => (
+                <a key={href} href={href}>
+                  {label}
                 </a>
               ))}
             </div>
@@ -77,10 +83,11 @@ export default function SiteFooter() {
 
         <div className={styles.rule} />
         <div className={styles.base}>
-          <span>© 2026 · Placeholder — fan concept, not affiliated with Marvel.</span>
+          <span>© 2026 Dwij Kansagara · Independent fan concept, not affiliated with Marvel or Disney.</span>
           <span>Built as a cinematic web experience.</span>
         </div>
       </footer>
     </div>
   );
 }
+

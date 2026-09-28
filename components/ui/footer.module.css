@@ -46,6 +46,13 @@
   pointer-events: none;
 }
 
+.footer :global(dwij-engagement) {
+  --engagement-accent: #00ff9c;
+  --engagement-panel: #06130e;
+  --engagement-ink: #eafff6;
+  --engagement-button-ink: #001d12;
+}
+
 .inner {
   position: relative;
   display: grid;

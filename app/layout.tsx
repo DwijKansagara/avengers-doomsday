@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Anton, Chakra_Petch } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 // Impact display face for the giant titles.
@@ -70,7 +71,16 @@ export default function RootLayout({
     <html lang="en" className={`${anton.variable} ${chakra.variable}`}>
       {/* suppressHydrationWarning: browser extensions (e.g. Grammarly) inject
           attributes on <body> before React hydrates — harmless, not our markup. */}
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning>
+        {children}
+        <Script
+          src="https://dwij-counts.antideploy.com/engagement-widget.js?v=20260929-3"
+          strategy="afterInteractive"
+        />
+      </body>
     </html>
   );
 }
+
+
+

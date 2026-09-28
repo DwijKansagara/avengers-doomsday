@@ -19,6 +19,8 @@ This is an independent fan-made study. It is not affiliated with, sponsored by, 
 - Zustand for discrete interface state
 - Lenis for optional smooth scrolling
 - Responsive CSS modules and reduced-motion handling
+- Static export for low-overhead hosting
+- Anonymous visit and appreciation counters, plus project-specific legal pages
 
 The main timeline writes progress into a mutable signal layer in `lib/signals.ts`. WebGL and DOM overlays read those values without routing every animation frame through React state.
 
@@ -42,12 +44,13 @@ npm ci
 npm run dev
 ```
 
-Open `http://localhost:3000`. To verify a production build:
+Open `http://localhost:3000`. To create the production-ready static export:
 
 ```bash
 npm run build
-npm run start
 ```
+
+The deployable site is written to `out/`. Serve that directory with any static web server when testing the exported build.
 
 ## Accessibility and performance
 
