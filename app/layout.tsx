@@ -74,13 +74,14 @@ export default function RootLayout({
       <body suppressHydrationWarning>
         {children}
         <Script
-          src="https://dwij-counts.antideploy.com/engagement-widget.js?v=20260929-3"
+          src="https://dwij-portfolio.antideploy.com/engagement-widget.js?v=20260929-4"
           strategy="afterInteractive"
         />
       </body>
     </html>
   );
 }
+
 
 
 
