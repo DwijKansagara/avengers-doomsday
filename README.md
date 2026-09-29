@@ -4,6 +4,8 @@
 
 # Cinematic interface study
 
+<img src="https://dwij-counts.antideploy.com/badge/doomsday.svg" alt="Doomsday views and likes" width="214" />
+
 A non-commercial front-end study of scroll-directed storytelling, layered video and real-time WebGL atmosphere. The project combines a fixed visual stage with a long scroll track so each section behaves like a controllable sequence rather than a set of separate pages.
 
 This is an independent fan-made study. It is not affiliated with, sponsored by, or endorsed by Marvel, Disney, or any film studio. Character names, trademarks, footage and related properties belong to their respective owners.
