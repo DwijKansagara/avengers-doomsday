@@ -10,6 +10,8 @@ A non-commercial front-end study of scroll-directed storytelling, layered video 
 
 **[Open the live experience](https://doomsday.antideploy.com)** · **[Explore the implementation](components/Experience.tsx)** · **[Report a technical problem](https://github.com/DwijKansagara/avengers-doomsday/issues/new/choose)**
 
+![Cinematic interface preview](docs/social-preview.png)
+
 [![Build and security checks](https://github.com/DwijKansagara/avengers-doomsday/actions/workflows/security.yml/badge.svg)](https://github.com/DwijKansagara/avengers-doomsday/actions/workflows/security.yml)
 
 This is an independent fan-made study. It is not affiliated with, sponsored by, or endorsed by Marvel, Disney, or any film studio. Character names, trademarks, footage and related properties belong to their respective owners.
