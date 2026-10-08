@@ -74,7 +74,7 @@ export default function RootLayout({
       <body suppressHydrationWarning>
         {children}
         <Script
-          src="https://dwij-portfolio.antideploy.com/engagement-widget.js?v=20260929-4"
+          src="https://dwij-signal.vercel.app/engagement-widget.js?v=20261008-1"
           strategy="afterInteractive"
         />
       </body>
