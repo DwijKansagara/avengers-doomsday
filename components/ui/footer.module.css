@@ -123,6 +123,24 @@
   height: 1px;
   background: rgba(158, 255, 214, 0.12);
 }
+.about {
+  position: relative;
+  max-width: 1400px;
+  margin: 3.5vh auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5vw;
+}
+.about p, .about summary {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgba(224, 244, 236, 0.68);
+}
+.about a { color: #7fffc7; text-decoration: underline; text-underline-offset: 4px; }
+.about details { border-top: 1px solid rgba(158, 255, 214, 0.12); padding: .6rem 0; }
+.about summary { cursor: pointer; color: #eafff6; }
+.about details p { margin-top: .45rem; }
 
 .base {
   max-width: 1400px;
@@ -148,4 +166,5 @@
   .brand {
     grid-column: 1 / -1;
   }
+  .about { grid-template-columns: 1fr; }
 }

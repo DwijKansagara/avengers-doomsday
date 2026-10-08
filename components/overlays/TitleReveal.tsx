@@ -69,7 +69,7 @@ export default function TitleReveal() {
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="none"
         disablePictureInPicture
       />
       <span className={styles.vignette} />

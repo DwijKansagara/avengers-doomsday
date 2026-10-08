@@ -45,6 +45,15 @@ export function primeElement(el: HTMLVideoElement | null) {
   }
 }
 
+/** Begin fetching a deferred clip only when its section is about to appear. */
+export function ensureVideoLoaded(el: HTMLVideoElement | null) {
+  if (!el || el.dataset.requested === "true") return;
+  el.dataset.requested = "true";
+  el.preload = "auto";
+  el.load();
+  primeElement(el);
+}
+
 /** Seek a scrubbed video, skipping micro-moves that would thrash the decoder. */
 export function scrubEl(el: HTMLVideoElement | null, t: number) {
   if (!el || el.readyState < 1) return;

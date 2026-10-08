@@ -154,11 +154,11 @@ export default function CharacterOrbit() {
             }}
             className={styles.video}
             src={`/videos/char-${c.slug}.mp4`}
-            poster={`/videos/char-${c.slug}-poster.jpg`}
+            poster={`/videos/char-${c.slug}-poster.webp`}
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="none"
             disablePictureInPicture
           />
           <div className={styles.grad} />

@@ -54,7 +54,7 @@ export default function TimelineImage() {
     <div className="mcu-layer" ref={layerRef} style={{ opacity: 0, visibility: "hidden" }} aria-hidden>
       <div className={styles.pan} ref={panRef}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className={styles.img} ref={imgRef} src={ASSETS.timelineImg} alt="" draggable={false} />
+        <img className={styles.img} ref={imgRef} src={ASSETS.timelineImg} alt="" loading="lazy" decoding="async" draggable={false} />
       </div>
       <span className={styles.fade} />
       <span className={styles.scrim} />

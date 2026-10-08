@@ -23,10 +23,15 @@ const chakra = Chakra_Petch({
 // social image correctly. Falls back to a sensible default otherwise.
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://doomsday.antideploy.com";
 const description =
-  "An Awwwards-style, fully scroll-driven cinematic web experience — the multiverse is breaking, only legends remain. Built with Next.js, React Three Fiber and GSAP. A Marvel-inspired fan concept.";
+  "A scroll-driven Avengers: Doomsday fan interface study by Dwij Kansagara, built with Next.js, React Three Fiber, Three.js and GSAP.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  authors: [{ name: "Dwij Kansagara", url: "https://about-me.antideploy.com" }],
+  creator: "Dwij Kansagara",
+  publisher: "Dwij Kansagara",
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
   title: "AVENGERS: DOOMSDAY — Cinematic Scroll Experience",
   description,
   keywords: [
@@ -48,13 +53,13 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: "AVENGERS: DOOMSDAY",
     type: "website",
-    images: [{ url: "/videos/title-reveal-poster.jpg", width: 1180, height: 486, alt: "AVENGERS: DOOMSDAY" }],
+    images: [{ url: "/videos/title-reveal-poster.webp", width: 1180, height: 486, alt: "Avengers: Doomsday cinematic fan interface" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "AVENGERS: DOOMSDAY — Cinematic Scroll Experience",
     description,
-    images: ["/videos/title-reveal-poster.jpg"],
+    images: ["/videos/title-reveal-poster.webp"],
   },
 };
 

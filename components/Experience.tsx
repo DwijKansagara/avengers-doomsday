@@ -5,7 +5,7 @@ import { gsap } from "@/lib/gsap";
 import { useLenis } from "@/lib/useLenis";
 import { useExperience } from "@/lib/store";
 import { signals } from "@/lib/signals";
-import { getVideoEl, scrubEl } from "@/lib/videos";
+import { ensureVideoLoaded, getVideoEl, scrubEl } from "@/lib/videos";
 import { VIDEO, SCROLL, TIMELINE_UNITS } from "@/lib/constants";
 
 import CinematicCanvas from "@/components/webgl/CinematicCanvas";
@@ -124,14 +124,20 @@ export default function Experience() {
           }
           if (hero) {
             hero.style.opacity = signals.heroOp.toFixed(3);
-            if (signals.heroOp > 0.002) scrubEl(hero, signals.heroT);
+            if (signals.heroOp > 0.002) {
+              ensureVideoLoaded(hero);
+              scrubEl(hero, signals.heroT);
+            }
           }
           // Section 5 — the ending video is scroll-scrubbed exactly like the Hero:
           // opacity + frame-accurate currentTime driven on the scroll event.
           if (finale) {
             finale.style.opacity = signals.finale.toFixed(3);
             finale.style.visibility = signals.finale > 0.002 ? "visible" : "hidden";
-            if (signals.finale > 0.002) scrubEl(finale, signals.finaleT);
+            if (signals.finale > 0.002) {
+              ensureVideoLoaded(finale);
+              scrubEl(finale, signals.finaleT);
+            }
           }
           const next = self.progress >= heroThreshold ? "hero" : "intro";
           if (useExperience.getState().phase !== next) useExperience.getState().setPhase(next);
@@ -255,11 +261,11 @@ export default function Experience() {
 
         {/* invisible scroll track — the distance the scrub travels over */}
         <div className="scroll-track" ref={trackRef} aria-hidden>
-          <section style={{ height: `${marvelVh}vh` }} aria-label="Marvel Intro" />
+          <section id="overview" style={{ height: `${marvelVh}vh` }} aria-label="Marvel Intro" />
           <section style={{ height: `${heroVh}vh` }} aria-label="Hero" />
-          <section style={{ height: `${showcaseVh}vh` }} aria-label="Characters" />
-          <section style={{ height: `${storyVh}vh` }} aria-label="Story" />
-          <section style={{ height: `${reelVh}vh` }} aria-label="Timeline" />
+          <section id="heroes" style={{ height: `${showcaseVh}vh` }} aria-label="Characters" />
+          <section id="story" style={{ height: `${storyVh}vh` }} aria-label="Story" />
+          <section id="timeline" style={{ height: `${reelVh}vh` }} aria-label="Timeline" />
           <section style={{ height: `${finaleVh}vh` }} aria-label="Finale" />
           <section style={{ height: `${mcuVh}vh` }} aria-label="Saga" />
           <section style={{ height: `${titleVh}vh` }} aria-label="Title" />

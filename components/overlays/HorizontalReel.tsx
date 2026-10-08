@@ -154,11 +154,11 @@ export default function HorizontalReel() {
                     }}
                     className={styles.video}
                     src={`/videos/char-${s.slug}.mp4`}
-                    poster={`/videos/char-${s.slug}-poster.jpg`}
+                    poster={`/videos/char-${s.slug}-poster.webp`}
                     muted
                     loop
                     playsInline
-                    preload="auto"
+                    preload="none"
                     disablePictureInPicture
                   />
                   <span className={styles.scrim} />

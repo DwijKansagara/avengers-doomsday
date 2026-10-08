@@ -28,11 +28,7 @@ export default function VideoLayer() {
     setVideoEl("finale", f);
 
     const primeM = () => primeElement(m);
-    const primeH = () => primeElement(h);
-    const primeF = () => primeElement(f);
     m?.addEventListener("loadeddata", primeM, { once: true });
-    h?.addEventListener("loadeddata", primeH, { once: true });
-    f?.addEventListener("loadeddata", primeF, { once: true });
 
     // safety re-prime on the first gesture
     let primed = false;
@@ -40,16 +36,12 @@ export default function VideoLayer() {
       if (primed) return;
       primed = true;
       primeElement(m);
-      primeElement(h);
-      primeElement(f);
     };
     const evs = ["pointerdown", "keydown", "touchstart", "wheel", "scroll"] as const;
     evs.forEach((e) => window.addEventListener(e, onGesture, { passive: true }));
 
     return () => {
       m?.removeEventListener("loadeddata", primeM);
-      h?.removeEventListener("loadeddata", primeH);
-      f?.removeEventListener("loadeddata", primeF);
       evs.forEach((e) => window.removeEventListener(e, onGesture));
       setVideoEl("marvel", null);
       setVideoEl("hero", null);
@@ -64,7 +56,7 @@ export default function VideoLayer() {
         className="cover-video"
         src={ASSETS.marvelVideo}
         poster={ASSETS.marvelPoster}
-        preload="metadata"
+        preload="none"
         muted
         playsInline
         style={{ opacity: 0 }}
@@ -74,7 +66,7 @@ export default function VideoLayer() {
         className="cover-video"
         src={ASSETS.heroVideo}
         poster={ASSETS.heroPoster}
-        preload="metadata"
+        preload="none"
         muted
         playsInline
         style={{ opacity: 0 }}

@@ -33,19 +33,19 @@ export const HEX = {
 /** Asset locations (served from /public). Videos are all-intra for scrubbing. */
 export const ASSETS = {
   marvelVideo: "/videos/marvel-intro-seq.mp4",
-  marvelPoster: "/videos/marvel-intro-poster.jpg",
+  marvelPoster: "/videos/marvel-intro-poster.webp",
   // New user-uploaded Hero trailer (landscape ~2.39:1) — fills with object-fit:cover.
   heroVideo: "/videos/hero-seq-v2.mp4",
-  heroPoster: "/videos/hero-poster-v2.jpg",
+  heroPoster: "/videos/hero-poster-v2.webp",
   // Section 5 ending (Thor → Doom → Captain America) — scroll-scrubbed, all-intra.
   // Swap this one file to update the ending; nothing else needs to change.
   finaleVideo: "/videos/finale-seq.mp4",
-  finalePoster: "/videos/finale-poster.jpg",
+  finalePoster: "/videos/finale-poster.webp",
   // Section 6 — the MCU timeline artwork (tall; scroll-panned).
-  timelineImg: "/story/timeline.jpg",
+  timelineImg: "/story/timeline.webp",
   // Section 7 — the AVENGERS DOOMSDAY title reveal (autoplay + loop).
   titleVideo: "/videos/title-reveal.mp4",
-  titlePoster: "/videos/title-reveal-poster.jpg",
+  titlePoster: "/videos/title-reveal-poster.webp",
 } as const;
 
 /** Approx durations (s); refined from real metadata at runtime. */

@@ -35,7 +35,7 @@ interface Panel {
 const CHAPTERS: Panel[] = [
   {
     n: "01",
-    img: "/story/panel-1.jpg",
+    img: "/story/panel-1.webp",
     kicker: "Lord of Latveria",
     title: ["Doctor", "Doom"],
     desc: "Victor von Doom bends science, sorcery, and fate to a single will — and the multiverse will kneel.",
@@ -45,7 +45,7 @@ const CHAPTERS: Panel[] = [
   },
   {
     n: "02",
-    img: "/story/panel-2.jpg",
+    img: "/story/panel-2.webp",
     kicker: "God of Thunder",
     title: ["Thor"],
     desc: "Storm-forged and unbroken, the God of Thunder rises to answer the end of everything.",
@@ -56,7 +56,7 @@ const CHAPTERS: Panel[] = [
   },
   {
     n: "03",
-    img: "/story/panel-3.jpg",
+    img: "/story/panel-3.webp",
     kicker: "God of Stories",
     title: ["Loki"],
     desc: "At the heart of time, the God of Stories holds every fracturing world together.",
@@ -67,7 +67,7 @@ const CHAPTERS: Panel[] = [
   },
   {
     n: "04",
-    img: "/story/panel-4.jpg",
+    img: "/story/panel-4.webp",
     kicker: "Leader of the X-Men",
     title: ["Cyclops"],
     desc: "Field leader of the X-Men, unleashing an unstoppable optic storm against the coming dark.",
@@ -77,7 +77,7 @@ const CHAPTERS: Panel[] = [
   },
   {
     n: "05",
-    img: "/story/panel-5.jpg",
+    img: "/story/panel-5.webp",
     kicker: "Master of the Ten Rings",
     title: ["Shang-Chi"],
     desc: "Wielding the ancient power of the Ten Rings, he stands unshaken before the storm.",
@@ -90,7 +90,7 @@ const CHAPTERS: Panel[] = [
     n: "06",
     // ?v=2 busts any cached copy of the old low-res image so the new HD asset
     // is guaranteed to load (the file itself was replaced in place).
-    img: "/story/panel-6.jpg?v=2",
+    img: "/story/panel-6.webp",
     kicker: "Marvel's First Family",
     title: ["Fantastic", "Four"],
     desc: "Four heroes, one family — stepping into a new universe against impossible odds.",
@@ -198,7 +198,7 @@ export default function StoryStack() {
           }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className={styles.bg} src={c.img} alt="" draggable={false} />
+          <img className={styles.bg} src={c.img} alt="" loading="lazy" decoding="async" draggable={false} />
           <span className={styles.scrim} />
           <span className={styles.glow} />
           <span className={styles.vignette} />

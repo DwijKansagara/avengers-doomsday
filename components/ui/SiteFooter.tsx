@@ -8,7 +8,6 @@ import styles from "./footer.module.css";
 /**
  * The closing footer — rises from the bottom after the title reveal, driven by
  * `signals.footer`. Minimal + elegant, in the same dark-green cinematic language.
- * Links are placeholders for now.
  */
 const clamp01 = (x: number) => (x < 0 ? 0 : x > 1 ? 1 : x);
 const smoothstep = (a: number, b: number, x: number) => {
@@ -16,7 +15,7 @@ const smoothstep = (a: number, b: number, x: number) => {
   return t * t * (3 - 2 * t);
 };
 
-const NAV = ["Overview", "Characters", "Story", "Timeline"];
+const NAV = [["Overview", "#overview"], ["Characters", "#heroes"], ["Story", "#story"], ["Timeline", "#timeline"]] as const;
 const LEGAL = [
   ["Privacy", "/privacy.html"],
   ["Terms", "/terms.html"],
@@ -43,8 +42,6 @@ export default function SiteFooter() {
     }
   });
 
-  const noop = (e: React.MouseEvent) => e.preventDefault();
-
   return (
     <div className={styles.wrap} ref={wrapRef} style={{ visibility: "hidden" }}>
       <footer className={styles.footer} ref={footRef} style={{ opacity: 0 }}>
@@ -61,9 +58,9 @@ export default function SiteFooter() {
           <nav>
             <div className={styles.colHead}>Explore</div>
             <div className={styles.links}>
-              {NAV.map((l) => (
-                <a key={l} href="#" onClick={noop}>
-                  {l}
+              {NAV.map(([label, href]) => (
+                <a key={href} href={href}>
+                  {label}
                 </a>
               ))}
             </div>
@@ -80,6 +77,18 @@ export default function SiteFooter() {
             </div>
           </div>
         </div>
+
+        <section className={styles.about} aria-labelledby="project-facts">
+          <div>
+            <div className={styles.colHead}>Created by</div>
+            <p><a href="https://about-me.antideploy.com/">Dwij Kansagara</a> is a Class 10 student and developer in Rajkot, India. He built this project to study cinematic interaction, 3D graphics and scroll choreography.</p>
+          </div>
+          <div>
+            <div className={styles.colHead} id="project-facts">Project facts</div>
+            <details><summary>Is this an official Marvel website?</summary><p>No. This is an independent, non-commercial fan interface study and is not affiliated with Marvel or Disney.</p></details>
+            <details><summary>How was it built?</summary><p>With Next.js, React Three Fiber, Three.js and GSAP. Scrolling controls the scene progression.</p></details>
+          </div>
+        </section>
 
         <div className={styles.rule} />
         <div className={styles.base}>

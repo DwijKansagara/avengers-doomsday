@@ -5,7 +5,12 @@ import { signals } from "@/lib/signals";
 import { useRaf } from "@/lib/useRaf";
 import styles from "./ui.module.css";
 
-const NAV = ["Overview", "Universe", "Heroes", "Trailers", "Tickets"];
+const NAV = [
+  ["Overview", "#overview"],
+  ["Heroes", "#heroes"],
+  ["Story", "#story"],
+  ["Timeline", "#timeline"],
+] as const;
 
 const clamp01 = (x: number) => (x < 0 ? 0 : x > 1 ? 1 : x);
 const smoothstep = (a: number, b: number, x: number) => {
@@ -45,20 +50,19 @@ export default function SiteHeader() {
       <header ref={ref} className={styles.header} style={{ opacity: 0, visibility: "hidden" }}>
         <div className={styles.brand}>
           <span className={styles.mark} aria-hidden />
-          <span className={styles.brandText}>
+          <h1 className={styles.brandText}>
             MARVEL<b>STUDIOS</b>
-          </span>
+            <span className="sr-only"> Avengers: Doomsday cinematic fan interface by Dwij Kansagara</span>
+          </h1>
         </div>
         <nav className={styles.nav}>
-          {NAV.map((n) => (
-            <a key={n} href="#" className={styles.navLink} onClick={(e) => e.preventDefault()}>
-              {n}
+          {NAV.map(([label, href]) => (
+            <a key={href} href={href} className={styles.navLink}>
+              {label}
             </a>
           ))}
         </nav>
-        <button className={styles.cta} type="button">
-          Get Tickets
-        </button>
+        <a className={styles.cta} href="https://github.com/DwijKansagara/avengers-doomsday" target="_blank" rel="noreferrer">View source</a>
       </header>
     </>
   );
