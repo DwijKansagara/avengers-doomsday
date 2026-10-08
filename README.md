@@ -8,9 +8,11 @@
 
 A non-commercial front-end study of scroll-directed storytelling, layered video and real-time WebGL atmosphere. The project combines a fixed visual stage with a long scroll track so each section behaves like a controllable sequence rather than a set of separate pages.
 
-This is an independent fan-made study. It is not affiliated with, sponsored by, or endorsed by Marvel, Disney, or any film studio. Character names, trademarks, footage and related properties belong to their respective owners.
+**[Open the live experience](https://doomsday.antideploy.com)** · **[Explore the implementation](components/Experience.tsx)** · **[Report a technical problem](https://github.com/DwijKansagara/avengers-doomsday/issues/new/choose)**
 
-**[Open the live web experience](https://doomsday.antideploy.com)**
+[![Build and security checks](https://github.com/DwijKansagara/avengers-doomsday/actions/workflows/security.yml/badge.svg)](https://github.com/DwijKansagara/avengers-doomsday/actions/workflows/security.yml)
+
+This is an independent fan-made study. It is not affiliated with, sponsored by, or endorsed by Marvel, Disney, or any film studio. Character names, trademarks, footage and related properties belong to their respective owners.
 
 ## Technical approach
 
@@ -76,4 +78,8 @@ npm run build
 The dependency lockfile is maintained with zero known npm audit findings at the time of the latest repository update.
 
 Maintainers signed in to Antideploy can publish a verified source bundle with `python scripts/deploy_antideploy.py`.
+
+## Feedback and contributions
+
+Performance traces, accessibility findings and focused code improvements are welcome. Do not contribute copyrighted video, images, character artwork or trademarks. Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request. If the implementation teaches you something, a GitHub star helps other creative developers discover it.
 
